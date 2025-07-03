@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
-
+import image from "../../assets/img/img4.webp"
 export const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -9,7 +9,7 @@ export const Navbar = () => {
     <div className="flex flex-row items-center justify-center">
       <nav className="fixed bottom-10 bg-white/30 backdrop-blur-md z-40 shadow-md px-3 py-2 rounded-full flex flex-row md:gap-5 items-center">
         <div onClick={() => navigate("/")}>
-          <Avatar sx={{ width: 40, height: 40 }} className="cursor-pointer" />
+          <Avatar sx={{ width: 40, height: 40 }} className="cursor-pointer" src={image}/>
         </div>
 
         <ul className="flex flex-row md:gap-7">

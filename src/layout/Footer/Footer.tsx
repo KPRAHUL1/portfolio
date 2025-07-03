@@ -47,7 +47,7 @@ export const Footer = () => {
 
         <div className="fle flex-col gap-5">
           <h1 className="text-md font-semibold">Contact</h1>
-          <p className="text-gray-600 text-sm mt-2">📧 kprahul1143@example.com</p>
+          <p className="text-gray-600 text-sm mt-2">📧 kprahul1143@gmail.com</p>
           <p className="text-gray-600 text-sm">📍 Tamil Nadu, India</p>
         </div>
       </div>
