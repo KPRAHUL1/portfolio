@@ -1,0 +1,18 @@
+import meetup1 from "./1719845214401.jpg"
+import meetup2 from "./1722149915967.jpg"
+import meetup21 from "./1722149924177.jpg"
+import meetup22 from "./1722149926258.jpg"
+import startup from "./1739714051779.jpg"
+import startup1 from "./1739714062338.jpg"
+import startup2 from "./1739714065480.jpg"
+import redux1 from "./IMG_9868.jpg"
+import redux2 from "./IMG_9868 (1).jpg"
+import redux3 from "./IMG_9867.jpg"
+import redux4 from "./IMG_9865.jpg"
+import video1 from "./IMG_9870.mov"
+import git from "./IMG_0362.jpg"
+import git1 from "./IMG_0363.jpg"
+import video2 from "./videoplayback.mp4"
+import git2 from "./IMG_0365.jpg"
+
+export {meetup1,meetup2,git,git1,video2,git2, meetup21,meetup22,startup,startup1,startup2,redux1,redux2,redux3,redux4,video1}

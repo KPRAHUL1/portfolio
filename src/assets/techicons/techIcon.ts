@@ -1,0 +1,16 @@
+import react from "./atom.png"
+import prisma from "./prism.png"
+import tailwind from "./Tailwind CSS.png"
+import redux from "./Redux.png"
+import postman from "./Postman.png"
+import git from "./Git (1).png"
+import github from "./GitHub.png"
+import javascript from "./JavaScript.png"
+import materialui from "./Material UI.png"
+import vite from "./Vite.js.png"
+import postgressql from "./PostgresSQL.png"
+import npm from "./NPM.png"
+import node from "./Node.js.png"
+import express from "./Express.png"
+export{react,redux,postgressql,postman,prisma,tailwind,git,github,javascript,materialui,vite,node,npm,express}
+
