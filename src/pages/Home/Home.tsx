@@ -2,7 +2,6 @@ import { hello } from "../../assets/icons/icon";
 import img1 from "../../assets/img/img2.webp";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
-import { ViewCounter } from "../../components/ViewCounter";
 
 const Home = () => {
   return (
@@ -39,7 +38,6 @@ const Home = () => {
               kprahul1143@gmail.com
             </h1>
           </a>
-          <ViewCounter/>
         </motion.div>
 
         <motion.div
@@ -78,8 +76,8 @@ const Home = () => {
           transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
         >
           <a
-            href="rahul.jpg"
-            download="Rahul_Resume.jpg"
+            href="kprahul.pdf"
+            download="Rahul_Resume.pdf"
             className="bg-black hover:bg-white cursor-pointer hover:text-black hover:border-gray-400 hover:border text-white rounded-xl px-3 py-3"
           >
             Download CV
