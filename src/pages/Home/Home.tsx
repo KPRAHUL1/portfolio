@@ -2,6 +2,7 @@ import { hello } from "../../assets/icons/icon";
 import img1 from "../../assets/img/img2.webp";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
+import { ViewCounter } from "../../components/ViewCounter";
 
 const Home = () => {
   return (
@@ -38,6 +39,7 @@ const Home = () => {
               kprahul1143@gmail.com
             </h1>
           </a>
+          <ViewCounter/>
         </motion.div>
 
         <motion.div
