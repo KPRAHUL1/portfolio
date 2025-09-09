@@ -84,7 +84,7 @@ const Home = () => {
           </a>
 
           <p className="text-md font-medium">
-            📍Tirunelveli, Tamil Nadu, India
+            📍Tirunelveli, Tamil Nadu, India, 627106.
           </p>
         </motion.div>
       </motion.section>
