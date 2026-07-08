@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { calender, mail, person, map, phone, brain, leftarrow, user2 } from "../../assets/icons/icon";
-import image from "../../assets/img/img3.webp";
+import image from "../../assets/img/rahulkp.jpeg";
 import Certificates from "./Certificate";
 import WorkExperience from "./workExperience";
 
@@ -38,15 +38,21 @@ const About = () => {
           Hello there!!
         </p>
         <p className="text-lg font-medium">
-          I am Rahul, a passionate MERN Stack Developer who builds dynamic and scalable web applications.
-          I have experience in React, Node.js, MongoDB, TypeScript, and Hadoop, creating innovative solutions.
-          Skilled in frontend and backend development, I enjoy solving complex problems with clean and efficient code.
-          Seeking opportunities to contribute my expertise to impactful web projects. 🚀
+          I didn't get into software just to write code — I was fascinated by the idea that technology could turn ideas into products that people use every day. What started as curiosity quickly became a passion for building applications, solving complex problems, and continuously learning how great software is designed. <br/>
+           <br/>
+         Over time, I've grown into a Full Stack Developer who enjoys working across the entire development lifecycle—from designing intuitive user interfaces to building scalable backend systems, APIs, and databases. I enjoy creating products that are not only functional but also performant, secure, and easy to use. For me, software engineering is about understanding the problem first and then building the simplest, most reliable solution.  <br/>
+           <br/>
+         As technology continues to evolve, I'm increasingly drawn to Artificial Intelligence and the next generation of intelligent software. I'm actively exploring Large Language Models (LLMs), AI agents, Retrieval-Augmented Generation (RAG), workflow automation, and modern cloud-native architectures. I'm excited by the opportunity to build applications where AI becomes a meaningful part of the user experience rather than just another feature.
+         I believe the best engineers never stop learning.<br/>
+          <br/>
+         Whether it's experimenting with new technologies, improving system design, contributing to innovative products, or understanding how users interact with software, I'm always looking for ways to grow both technically and professionally.<br/>
+          <br/>
+         My long-term vision is to build products that solve real-world problems at scale by combining strong engineering principles with the power of AI. I want to contribute to technologies that create lasting value, improve everyday experiences, and shape the future of software. 🚀
         </p>
         <div className="flex md:flex-row flex-col gap-10 lg:gap-52 w-full ">
           {[
-            { title: "6", subtitle: "Months of experience" },
-            { title: "19+", subtitle: "DSA problems" },
+            { title: "1.5+", subtitle: "Years of experience" },
+            { title: "39+", subtitle: "DSA problems" },
             { title: "10+", subtitle: "Total projects" }
           ].map((item, index) => (
             <motion.div

@@ -16,10 +16,10 @@ export const Footer = () => {
       <div className="flex flex-row gap-4">
   <h1 className="text-md">Get in touch:</h1>
   {[
-    { src: facebook, link: "https://www.facebook.com/your-profile" },
+    { src: facebook, link: "https://www.facebook.com/MINX0096/" },
     { src: instagram, link: "https://www.instagram.com/kp___rahul/" },
     { src: linkedin, link: "https://www.linkedin.com/in/rahulk07/" },
-    { src: twitter, link: "https://twitter.com/your-profile" },
+    { src: twitter, link: "https://x.com/KP__RAHUL" },
   ].map((item, index) => (
     <a key={index} href={item.link} target="_blank" rel="noopener noreferrer">
       <img src={item.src} alt="Social Icon" className="cursor-pointer w-6" />
@@ -55,7 +55,7 @@ export const Footer = () => {
       {/* Copyright & Policies */}
       <div className="text-center text-gray-500 text-xs">
         <p>Terms & Conditions | Privacy Policy</p>
-        <p>© 2024 Rahul | All rights reserved.</p>
+        <p>© 2026 KPRahul | All rights reserved.</p>
       </div>
     </motion.footer>
   );

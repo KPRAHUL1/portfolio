@@ -1,5 +1,5 @@
 import { hello } from "../../assets/icons/icon";
-import img1 from "../../assets/img/img2.webp";
+import img1 from "../../assets/img/rahulkp.jpeg";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 
@@ -57,7 +57,7 @@ const Home = () => {
             />
             <h1 className="text-5xl font-semibold">Hi, I'm KP Rahul!</h1>
           </div>
-          <p className="text-xl font-medium">Full Stack Developer</p>
+          <p className="text-xl font-medium">Software Engineer</p>
         </motion.div>
 
         <motion.div
@@ -66,7 +66,7 @@ const Home = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
         >
-          <img src={img1} alt="" className="w-96 rounded-xl " />
+          <img src={img1} alt="" className="w-[600px] rounded-xl " />
         </motion.div>
 
         <motion.div
@@ -78,12 +78,12 @@ const Home = () => {
           <a
             href="kprahul.pdf"
             download="Rahul_Resume.pdf"
-            className="bg-black hover:bg-white cursor-pointer hover:text-black hover:border-gray-400 hover:border text-white rounded-xl px-3 py-3"
+            className="bg-black hover:bg-white whitespace-nowrap cursor-pointer hover:text-black hover:border-gray-400 hover:border text-white rounded-xl px-3 py-3"
           >
             Download CV
           </a>
 
-          <p className="text-md font-medium">
+          <p className="text-md font-medium text-start">
             📍Tirunelveli, Tamil Nadu, India, 627106.
           </p>
         </motion.div>
