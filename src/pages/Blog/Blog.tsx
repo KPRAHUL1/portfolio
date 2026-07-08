@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { blog1, leftarrow } from "../../assets/icons/icon";
 import { blogPosts } from "../../data/blogData";
 import { useNavigate } from "react-router-dom";
+import LinkedInPosts from "./LinkedInPosts";
 
 const Blog = () => {
   const navigate = useNavigate();
@@ -72,6 +73,8 @@ const Blog = () => {
       </motion.div>
     ))}
   </motion.div>
+
+  <LinkedInPosts />
 </section>
 
     </>

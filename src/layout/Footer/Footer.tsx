@@ -54,7 +54,7 @@ export const Footer = () => {
 
       {/* Copyright & Policies */}
       <div className="text-center text-gray-500 text-xs">
-        <p>Terms & Conditions | Privacy Policy</p>
+        {/* <p>Terms & Conditions | Privacy Policy</p> */}
         <p>© 2026 KPRahul | All rights reserved.</p>
       </div>
     </motion.footer>

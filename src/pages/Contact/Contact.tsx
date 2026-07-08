@@ -101,7 +101,7 @@ const Contact = () => {
           </div>
           <div className="flex flex-row gap-3">
             <img className="w-7" src={mailbox} alt="" />
-            <p className="text-md hover:underline cursor-pointer">kprahul@gmail.com</p>
+            <p className="text-md hover:underline cursor-pointer">kprahul1143@gmail.com</p>
           </div>
           <div className="flex flex-row gap-3">
             <img className="w-7" src={place} alt="" />

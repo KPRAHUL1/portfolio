@@ -18,4 +18,10 @@ import call from "./669b743d7c9aab6088128009_call.svg"
 import mailbox from "./669b743d7c9aab6088127fff_mail.svg"
 import place from "./669b743d7c9aab608812800d_location.svg"
 import blog1 from "./66de893283ff8257a2611387_blogging.svg"
-export { facebook, instagram,call,mailbox,place, linkedin,blog1, twitter,hello ,cloud,brain,person,calender,map,phone,mail,leftarrow,user2,projecticon,contact};
+import blockchain from './blockchain.png'
+import devops from './deops.png'
+import aws from './aws.png'
+import app from "./app.png"
+import data from "./data.png"
+export { facebook, instagram,call,mailbox,place, linkedin,blog1, twitter,hello ,cloud,brain,person,calender,map,phone,mail,leftarrow,user2,projecticon,contact
+,blockchain,devops,aws,app,data };
