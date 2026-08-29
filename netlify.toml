@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Pin to the same Node the CI workflow uses, so a green CI means a green deploy.
+  NODE_VERSION = "22"
+
+# Netlify serves static files only, so a hard refresh on /about would 404.
+# This hands every unmatched path back to index.html for React Router.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
