@@ -1,0 +1,20 @@
+# Reinstalled inside the image by `npm ci`; copying the host copy would be
+# slow and could carry platform-specific binaries.
+node_modules
+dist
+dist-ssr
+
+.git
+.github
+.vscode
+.idea
+
+*.log
+*.local
+.env
+.env.*
+
+Dockerfile
+.dockerignore
+netlify.toml
+README.md
