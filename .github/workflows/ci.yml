@@ -124,58 +124,48 @@ jobs:
     runs-on: ubuntu-latest
     # Only deploy an image that was built, smoke-tested and actually pushed.
     needs: docker
-    # Never deploy from a pull request: secrets are unavailable there, and an
-    # unreviewed PR should not be able to reach the server.
+    # Never deploy from a pull request: secrets are unavailable there.
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
+    env:
+      IMAGE: kprahul/personal-site
+      CONTAINER: portfolio
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # /var/www/personal-site is created and chowned to ec2-user by
-      # deploy/ec2-bootstrap.sh, which must be run once on a fresh instance.
-      - name: Copy compose file to server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          port: ${{ secrets.SERVER_PORT || 22 }}
-          source: docker-compose.yml
-          target: /var/www/personal-site
-
       - name: server ssh
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          # Falls back to 22 when SERVER_PORT isn't set. Passing the bare
-          # secret would send an empty string and override the action's own
-          # default, failing the connection.
-          port: ${{ secrets.SERVER_PORT || 22 }}
+          port: 22
+          # Makes the job-level env vars above visible inside the remote shell.
+          envs: IMAGE,CONTAINER
           script: |
-            # Replaces the old script_stop input, which newer versions of
-            # ssh-action no longer accept: abort on the first failing command
-            # so a broken deploy fails the job instead of reporting green.
+            # Abort on the first failing command. Replaces the script_stop
+            # input, which newer versions of ssh-action no longer accept.
             set -eo pipefail
 
-            cd /var/www/personal-site
+            # Pin to this commit's image rather than :latest, so you can always
+            # tell what is running and re-running an old job redeploys that build.
+            TAG=sha-${{ github.sha }}
 
-            # Pin the deploy to this commit's image rather than :latest, so a
-            # re-run of an older workflow redeploys that commit, not whatever
-            # latest currently points at.
-            echo "TAG=sha-${{ github.sha }}" > .env
+            # Pull before stopping anything, so the old container keeps serving
+            # if the pull fails. Also keeps cached layers instead of `rmi` first.
+            docker pull "$IMAGE:$TAG"
 
-            docker compose pull
-            docker compose up -d
+            # `|| true` because there is nothing to stop on the first deploy.
+            docker stop "$CONTAINER" || true
+            docker rm "$CONTAINER" || true
 
-            # Confirm nginx is actually serving before calling the deploy good.
+            docker run -d               --name "$CONTAINER"               --restart unless-stopped               -p 80:80               "$IMAGE:$TAG"
+
+            # Confirm nginx is really serving before calling the deploy good.
             for i in $(seq 1 15); do
               curl -fsS http://localhost/ >/dev/null 2>&1 && break
               sleep 1
             done
             curl -fsS http://localhost/ | grep -q 'id="root"'
 
-            # Old image versions pile up fast on a small EC2 root volume.
+            # Old image versions fill a small EC2 root volume fast.
             docker image prune -f
