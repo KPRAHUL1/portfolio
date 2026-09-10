@@ -17,7 +17,7 @@ const Home = () => {
 
       {/* Animated Section */}
       <motion.section
-        className="relative flex-col flex justify-center items-center gap-3  xl:mx-[500px] m-10 backdrop-blur-md bg-white/30 md:p-10 rounded-xl"
+        className="relative flex-col flex justify-center items-center gap-3 mx-auto my-10 w-[min(100%-2rem,56rem)] backdrop-blur-md bg-white/30 md:p-10 rounded-xl"
         initial={{ opacity: 0, y: 50 }} // Initial state (hidden + moved down)
         whileInView={{ opacity: 1, y: 0 }} // When in view, fade in + move up
         transition={{ duration: 1, ease: "easeInOut" }} // Smooth ease-in-out transition
