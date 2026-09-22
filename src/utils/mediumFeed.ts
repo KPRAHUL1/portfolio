@@ -8,6 +8,17 @@ export interface MediumPost {
   categories: string[];
 }
 
+/** Raw item shape returned by the rss2json API. */
+interface RssItem {
+  title?: string;
+  pubDate?: string;
+  link?: string;
+  thumbnail?: string;
+  content?: string;
+  description?: string;
+  categories?: string[];
+}
+
 const MEDIUM_USERNAME = "@kprahul";
 
 // Posts whose title contains any of these (case-insensitive) are hidden
@@ -23,7 +34,7 @@ const RSS_API = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURICompone
  * Medium often leaves `thumbnail` empty and embeds the cover image
  * inside the post content instead — grab the first <img> we can find.
  */
-function extractImage(content: string): string {
+function extractImage(content?: string): string {
   const match = content?.match(/<img[^>]+src=["']([^"']+)["']/i);
   return match?.[1] ?? "";
 }
@@ -59,9 +70,9 @@ export function useMediumPosts() {
           throw new Error(data.message || "Feed could not be loaded");
         }
 
-        const items: MediumPost[] = (data.items ?? [])
-          .filter((item: any) => !isHidden(item.title ?? ""))
-          .map((item: any) => ({
+        const items: MediumPost[] = ((data.items ?? []) as RssItem[])
+          .filter((item) => !isHidden(item.title ?? ""))
+          .map((item) => ({
             title: item.title ?? "Untitled",
             pubDate: item.pubDate ?? "",
             link: item.link ?? "#",
