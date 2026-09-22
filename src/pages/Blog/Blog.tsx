@@ -3,6 +3,7 @@ import { blog1, leftarrow } from "../../assets/icons/icon";
 import { blogPosts } from "../../data/blogData";
 import { useNavigate } from "react-router-dom";
 import LinkedInPosts from "./LinkedInPosts";
+import MediumPosts from "./MediumPosts";
 
 const Blog = () => {
   const navigate = useNavigate();
@@ -75,6 +76,8 @@ const Blog = () => {
   </motion.div>
 
   <LinkedInPosts />
+
+  <MediumPosts />
 </section>
 
     </>
