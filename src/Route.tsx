@@ -10,6 +10,7 @@ import Blog from "./pages/Blog/Blog";
 import BlogDetails from "./pages/Blog/blogDetails";
 import Posts from "./pages/Posts/Post";
 import CreatePost from "./pages/Posts/PostForm";
+import NotFound from "./pages/NotFound/NotFound";
 const AppRoutes = () => {
   return (
     <Router>
@@ -25,7 +26,7 @@ const AppRoutes = () => {
            <Route path="/contact" element={<Contact/>}/>
            <Route path="/posts" element={<Posts/>}/>
            <Route path="/createPosts" element={<CreatePost/>}/>
-          <Route path="*" element={<h1 className="text-center text-2xl">404 Not Found</h1>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
     </Router>

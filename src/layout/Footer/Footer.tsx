@@ -33,13 +33,19 @@ export const Footer = () => {
       <div>
         <h1 className="text-md font-semibold">Quick Links</h1>
         <ul className="text-gray-600 text-sm mt-2 space-y-2 md:flex md:flex-row md:gap-5">
-          {["Home", "About", "Projects", "Contact"].map((item, index) => (
+          {[
+            { label: "Home", path: "/" },
+            { label: "About", path: "/about" },
+            { label: "Projects", path: "/projects" },
+            { label: "Blog", path: "/blog" },
+            { label: "Contact", path: "/contact" },
+          ].map((item) => (
             <li
-              key={index}
+              key={item.label}
               className="cursor-pointer hover:text-gray-900"
-              onClick={() => navigate(`/${item.toLowerCase()}`)}
+              onClick={() => navigate(item.path)}
             >
-              {item}
+              {item.label}
             </li>
           ))}
         </ul>
